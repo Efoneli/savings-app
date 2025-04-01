@@ -23,12 +23,12 @@ const Sidebar: React.FC = () => {
   ];
 
   return (
-    <div className="w-64 h-screen bg-gray-900 text-white p-4">
+    <div className="w-64 h-screen bg-gray-200 text-gray-700 p-4">
       <h2 className="text-xl font-bold mb-6">Fintech App</h2>
       <ul>
         {menuItems.map((item) => (
           <li key={item.id}>
-            <Link href={item.path} className={`flex items-center gap-3 p-3 cursor-pointer rounded ${pathname === item.path ? "bg-gray-700" : "hover:bg-gray-700"}`}>
+            <Link href={item.path} className={`flex items-center gap-3 p-3 cursor-pointer rounded ${pathname === item.path ? "bg-gray-300" : "hover:bg-gray-100"}`}>
               {item.icon} {item.label}
             </Link>
           </li>
@@ -42,11 +42,22 @@ const Sidebar: React.FC = () => {
 
 const Header: React.FC = () => {
   return (
-    <div className="w-full bg-white shadow-md p-4 flex justify-between items-center">
+    <div className="w-full bg-white text-gray-600 shadow-md p-4 flex justify-between items-center">
       <h2 className="text-xl font-bold">Dashboard</h2>
       <div className="flex items-center gap-4">
         <FaBell className="text-gray-700 cursor-pointer" />
         <FaUser className="text-gray-700 cursor-pointer" />
+      </div>
+    </div>
+  );
+};
+
+const Footer: React.FC = () => {
+  return (
+    <div className="hr w-full bg-white text-gray-600 shadow-md p-4 flex justify-between items-center">
+      <div className="flex items-center justify-center gap-4">
+      <p>Terms</p>
+      <p>Privacy</p>
       </div>
     </div>
   );
@@ -58,7 +69,8 @@ export default function Dashboard({ children }: { children: React.ReactNode }) {
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Header />
-        <div className="flex-1 bg-gray-100 p-6">{children}</div>
+        <div className="flex-1 bg-white text-gray-900 p-6">{children}</div>
+        <Footer />
       </div>
     </div>
   );
