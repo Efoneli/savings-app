@@ -7,7 +7,7 @@ export default function Recent() {
     { id: 3, type: "Investment", amount: "$500", date: "2024-08-08" },
   ];
 
-  <div>
+  return (
     <div className="grid grid-cols-4 gap-4">
       {/* Recent Transactions */}
       <div className="bg-white col-span-3 p-4 rounded-xl shadow-md mt-6">
@@ -40,5 +40,5 @@ export default function Recent() {
         </button>
       </div>
     </div>
-  </div>;
+  );
 }
