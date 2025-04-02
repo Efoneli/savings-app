@@ -46,7 +46,9 @@ const Header: React.FC = () => {
       <h2 className="text-xl font-bold">Dashboard</h2>
       <div className="flex items-center gap-4">
         <FaBell className="text-gray-700 cursor-pointer" />
+        <Link href={'/settings'}>
         <FaUser className="text-gray-700 cursor-pointer" />
+        </Link>
       </div>
     </div>
   );
