@@ -46,34 +46,48 @@
 
 
 
-import React, { useContext, useState, createContext } from 'react'
+// import React, { useContext, useState, createContext } from 'react'
 
-// Create a context
-const ThemeContext = createContext()
+// // Create a context
+// const ThemeContext = createContext()
 
-// Context provider component
-const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light')
+// // Context provider component
+// const ThemeProvider = ({ children }) => {
+//   const [theme, setTheme] = useState('light')
+//   return (
+//     <ThemeContext.Provider value={{ theme, setTheme }}>
+//       {children}
+//     </ThemeContext.Provider>
+//   )
+// }
+
+// // A component using the context
+// const Button = () => {
+//   const { theme, setTheme } = useContext(ThemeContext)
+//   return (
+//     <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+//       Current Theme: {theme}
+//     </button>
+//   )
+// }
+
+// // App
+// const App = () => (
+//   <ThemeProvider>
+//     <Button />
+//   </ThemeProvider>
+// )
+
+
+
+
+import Counter from '../components/Counter'
+
+export default function Home() {
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <main className="flex min-h-screen flex-col items-center justify-center p-8">
+      <h1 className="text-3xl font-bold mb-4">Next.js + Zustand</h1>
+      <Counter />
+    </main>
   )
 }
-
-// A component using the context
-const Button = () => {
-  const { theme, setTheme } = useContext(ThemeContext)
-  return (
-    <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
-      Current Theme: {theme}
-    </button>
-  )
-}
-
-// App
-const App = () => (
-  <ThemeProvider>
-    <Button />
-  </ThemeProvider>
-)
